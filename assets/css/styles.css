@@ -16,14 +16,13 @@
     --accent: #c4ff0e;
 }
 
-
+ /* inspect element css override for nav bar */ 
 
 h1 {
   color: var(--primary-color);
   font-style: ver(--primary-font);
 }
 
- /* inspect element css override for nav bar */ 
 h4.mb-3 {
     padding: 1.5rem;
 }
