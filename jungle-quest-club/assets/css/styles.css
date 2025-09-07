@@ -1,0 +1,126 @@
+
+
+/*  Import Google Fonts */
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto+Slab:wght@100..900&display=swap');
+
+
+/* CSS Variables */
+:root {
+    --primary-font: 'Roboto Slab', serif;
+    --secondary-font: 'Open Sans', sans-serif;
+    --primary-color: #f5d313;/*dark brown*/
+    --secondary-color: #aa9581;
+    --highlight-color: #11492f;
+    --highlight-color-light: #ab9b78;
+    --accent: #c4ff0e;
+}
+
+ /* inspect element css override for nav bar */ 
+
+h1 {
+  color: var(--primary-color);
+  font-style: ver(--primary-font);
+}
+
+h4.mb-3 {
+    padding: 1.5rem;
+}
+
+a.nav-link {
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+nav#navbar {
+    background-color: #0d1e06 !important;
+}
+
+.hero h1 {
+  text-shadow: 3px 3px 6px rgba(0,0,0,0.8);
+}
+.hero p {
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+  font-style: var(--secondary-font);  
+  /* font-weight: 300; 
+  font-size: 1.2rem; */
+}
+
+.logo {
+  height: 60px;
+  max-height: 60px;
+  width: auto;
+  object-fit: contain;
+  /* Ensures the logo doesn't stretch */
+  margin-top: -10px;
+  margin-bottom: -10px;
+}
+
+.navbar {
+  min-height: 56px;
+  /* Default Bootstrap navbar height */
+  align-items: center;
+}
+.section-title {
+  color: #198754;
+  font-weight: bold;
+}
+.custom-button-filled {
+  background-color: #198754;
+  color: white;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+}
+.custom-button-filled:hover {
+  background-color: var(--highlight-color);
+  color: white;
+}
+/* Hero */
+.hero {
+  background: url('../images/tom-boy-in-jungle.webp') center/cover no-repeat;
+  position: relative;
+  height: 80vh;
+  background-attachment: fixed; /* This makes the background image "freeze" */
+}
+
+/* 3. Accent Button */
+.btn-accent {
+  background: var(--accent);
+  color: #000;
+  border: none;
+}
+.btn-accent:hover {
+  opacity: 0.8;
+}
+
+/* Mobile adjustments for 320px screens */
+@media (max-width: 400px) {
+  .adventure-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+  .adventure-buttons .btn {
+    width: 100%;
+    margin-bottom: 0;
+  }
+}
+
+  /* Stack social icons vertically with spacing */
+  .footer-social,
+  .social-icons {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start;
+    margin-top: 10px;
+  }
+  .footer-social a,
+  .social-icons a {
+    width: max-content;
+    font-size: 1.2rem;
+  }
+}
