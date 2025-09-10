@@ -77,7 +77,7 @@
               <a class="nav-link" href="#about">About</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#gallery">Gallery</a>
+              <a class="nav-link" href="gallery.html#gallery">Gallery</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#contact">Contact</a>
@@ -100,9 +100,7 @@
           Join the adventure! Experience real-life treasure hunts and survival
           missions for kids and families.
         </p>
-        <a href="#adventures" class="btn btn-success btn-lg "
-          >Start Adventure</a
-        >
+        <a href="#adventures" class="btn btn-success btn-lg">Start Adventure</a>
         <a href="#events" class="btn btn-outline-light btn-lg">View Events</a>
       </div>
     </header>
@@ -220,7 +218,12 @@
                       <td>$50</td>
                       <td>$30</td>
                       <td>
-                         <a href="#signup-form" class="btn btn-sm btn-success" role="button">Book</a>
+                        <a
+                          href="#signup-form"
+                          class="btn btn-sm btn-success"
+                          role="button"
+                          >Book</a
+                        >
                       </td>
                     </tr>
                     <tr>
@@ -230,7 +233,12 @@
                       <td>$40</td>
                       <td>$25</td>
                       <td>
-                          <a href="#signup-form" class="btn btn-sm btn-success" role="button">Book</a>
+                        <a
+                          href="#signup-form"
+                          class="btn btn-sm btn-success"
+                          role="button"
+                          >Book</a
+                        >
                       </td>
                     </tr>
                     <tr>
@@ -240,7 +248,12 @@
                       <td>$65</td>
                       <td>$45</td>
                       <td>
-                          <a href="#signup-form" class="btn btn-sm btn-success" role="button">Book</a>
+                        <a
+                          href="#signup-form"
+                          class="btn btn-sm btn-success"
+                          role="button"
+                          >Book</a
+                        >
                       </td>
                     </tr>
                     <tr>
@@ -250,7 +263,12 @@
                       <td>$80</td>
                       <td>$55</td>
                       <td>
-                          <a href="#signup-form" class="btn btn-sm btn-success" role="button">Book</a>
+                        <a
+                          href="#signup-form"
+                          class="btn btn-sm btn-success"
+                          role="button"
+                          >Book</a
+                        >
                       </td>
                     </tr>
                   </tbody>
@@ -354,7 +372,12 @@
             </div>
           </div>
           <div class="text-center mt-4">
-            <button class="btn btn-success">View More Photos</button>
+            <button
+              class="btn btn-success"
+              onclick="window.location.href='gallery.html'"
+            >
+              View More Photos
+            </button>
           </div>
         </div>
       </section>
@@ -388,15 +411,15 @@
 
               <h5 class="mt-4 mb-3">Follow Us</h5>
               <div class="footer-social">
-              <a href="#" class="btn btn-outline-success me-2">
-                <i class="fab fa-facebook-f"></i> Facebook
-              </a>
-              <a href="#" class="btn btn-outline-success me-2">
-                <i class="fab fa-instagram"></i> Instagram
-              </a>
-              <a href="#" class="btn btn-outline-success">
-                <i class="fab fa-twitter"></i> Twitter
-              </a>
+                <a href="#" class="btn btn-outline-success me-2">
+                  <i class="fab fa-facebook-f"></i> Facebook
+                </a>
+                <a href="#" class="btn btn-outline-success me-2">
+                  <i class="fab fa-instagram"></i> Instagram
+                </a>
+                <a href="#" class="btn btn-outline-success">
+                  <i class="fab fa-twitter"></i> Twitter
+                </a>
               </div>
             </div>
 
@@ -551,28 +574,32 @@
     </footer>
 
     <!-- Bootstrap JS -->
-   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+      crossorigin="anonymous"
+    ></script>
 
-   <!-- !-- JavaScript code to ensure the Bootstrap mobile navbar collapses when navigating to in-page links --! -->
-<script>
-    document
+    <!-- !-- JavaScript code to ensure the Bootstrap mobile navbar collapses when navigating to in-page links --! -->
+    <script>
+      document
         .querySelectorAll(".navbar-collapse .nav-link")
         .forEach((link) => {
-            link.addEventListener("click", function (e) {
-                let section = document.querySelector(e.target.getAttribute("href"));
-                if (section) {
-                    e.preventDefault(); // Prevent default anchor click behavior
-                    let navbarHeight = document.querySelector(".navbar-toggler").offsetHeight;
-                    window.scroll({
-                        top: section.offsetTop - navbarHeight, // Adjust for navbar height
-                        behavior: "smooth",
-                    });
-                    document
-                        .querySelector(".navbar-collapse")
-                        .classList.remove("show"); // Collapse navbar
-                }
-            });
+          link.addEventListener("click", function (e) {
+            let section = document.querySelector(e.target.getAttribute("href"));
+            if (section) {
+              e.preventDefault(); // Prevent default anchor click behavior
+              let navbarHeight =
+                document.querySelector(".navbar-toggler").offsetHeight;
+              window.scroll({
+                top: section.offsetTop - navbarHeight, // Adjust for navbar height
+                behavior: "smooth",
+              });
+              document
+                .querySelector(".navbar-collapse")
+                .classList.remove("show"); // Collapse navbar
+            }
+          });
         });
-</script>
+    </script>
   </body>
 </html>
