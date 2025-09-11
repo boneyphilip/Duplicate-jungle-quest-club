@@ -1,25 +1,25 @@
-/* --------------------------------------------------
+/* ==================================================
    1. Import Google Fonts
--------------------------------------------------- */
+================================================== */
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto+Slab:wght@100..900&display=swap');
 
-/* --------------------------------------------------
+/* ==================================================
    2. CSS Variables (Theme Colors & Fonts)
--------------------------------------------------- */
+================================================== */
 :root {
-    --primary-font: 'Roboto Slab', serif;
-    --secondary-font: 'Open Sans', sans-serif;
+  --primary-font: 'Roboto Slab', serif;
+  --secondary-font: 'Open Sans', sans-serif;
 
-    --primary-color: #f5d313;   /* Yellow highlight */
-    --secondary-color: #aa9581; /* Neutral brown */
-    --highlight-color: #11492f; /* Dark green */
-    --highlight-color-light: #ab9b78;
-    --accent: #c4ff0e;          /* Accent lime */
+  --primary-color: #f5d313;   /* Yellow highlight */
+  --secondary-color: #aa9581; /* Neutral brown */
+  --highlight-color: #11492f; /* Dark green */
+  --highlight-color-light: #ab9b78;
+  --accent: #c4ff0e;          /* Accent lime */
 }
 
-/* --------------------------------------------------
-   3. Global Headings & Typography
--------------------------------------------------- */
+/* ==================================================
+   3. Global Reset & Typography
+================================================== */
 body {
   font-family: var(--secondary-font);
   margin: 0;
@@ -32,19 +32,20 @@ h1 {
 }
 
 h4.mb-3 {
-    padding: 1.5rem;
+  padding: 1.5rem;
 }
 
 a.nav-link {
-    text-transform: uppercase;
-    font-weight: 700;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-family: var(--secondary-font);
 }
 
-/* --------------------------------------------------
-   4. Navigation Bar Styling
--------------------------------------------------- */
+/* ==================================================
+   4. Navigation Bar
+================================================== */
 nav#navbar {
-    background-color: #0d1e06 !important;
+  background-color: #0d1e06 !important; /* override Bootstrap bg */
 }
 
 .navbar {
@@ -63,35 +64,38 @@ nav#navbar {
   object-fit: contain;
 }
 
-/* --------------------------------------------------
+/* ==================================================
    5. Hero Section
--------------------------------------------------- */
+================================================== */
 .hero {
   background: url('../images/tom-boy-in-jungle.webp') center/cover no-repeat;
   position: relative;
   height: 80vh;
-  background-attachment: fixed;
+  background-attachment: fixed; /* parallax effect */
 }
 
 .hero h1 {
-  text-shadow: 3px 3px 6px rgba(0,0,0,0.8);
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
 }
+
 .hero p {
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
   font-family: var(--secondary-font);
 }
 
-/* --------------------------------------------------
+/* ==================================================
    6. Buttons
--------------------------------------------------- */
+================================================== */
 .custom-button-filled {
-  background-color: #198754;
+  background-color: #198754; /* Bootstrap green */
   color: white;
   border: none;
   padding: 8px 20px;
   border-radius: 5px;
   text-decoration: none;
+  transition: background-color 0.3s;
 }
+
 .custom-button-filled:hover {
   background-color: var(--highlight-color);
   color: white;
@@ -101,40 +105,138 @@ nav#navbar {
   background: var(--accent);
   color: #000;
   border: none;
+  transition: opacity 0.3s;
 }
+
 .btn-accent:hover {
   opacity: 0.8;
 }
 
-/* --------------------------------------------------
+/* ==================================================
    7. Section Titles
--------------------------------------------------- */
+================================================== */
 .section-title {
   color: #198754;
   font-weight: bold;
+  font-family: var(--primary-font);
 }
 
-/* --------------------------------------------------
-   8. Responsive Adjustments
--------------------------------------------------- */
-@media (max-width: 400px) {
-  .adventure-buttons {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    width: 100%;
+/* ==================================================
+   8. Contact Section (Get in Touch + Map + Form)
+================================================== */
+
+/* Make row stretch evenly */
+#contact .contact-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+}
+
+/* Both columns behave like equal height blocks */
+#contact .contact-info,
+#contact .booking-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+/* Google Map Styling */
+.map-container {
+  flex-grow: 1;
+  margin-top: 1rem;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Map iframe full height */
+.map-container iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  filter: saturate(1.2) brightness(0.95) contrast(1.05);
+  /* 
+    saturate(1.2)   → boost greens, makes vegetation pop
+    brightness(0.95) → darkens a bit, less "washed out"
+    contrast(1.05)  → better definition
+  */
+  border-radius: 8px; /* match cards & buttons */
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .map-container {
+    height: 250px; /* fixed height on mobile */
+    flex-grow: 0;
   }
-  .adventure-buttons .btn {
-    width: 100%;
-    margin-bottom: 0;
+  .map-container iframe {
+    height: 100%;
   }
 }
 
-/* --------------------------------------------------
+/* ===============================
+   Contact Form Styling
+================================= */
+
+/* Form Container */
+#contact form {
+  background: #ffffff; /* keep clean background */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+/* Labels */
+#contact label {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #11492f; /* jungle green */
+  margin-bottom: 4px;
+}
+
+/* Input + Select + Textarea */
+#contact .form-control,
+#contact .form-select {
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  transition: all 0.3s ease;
+  box-shadow: none;
+  font-size: 0.95rem;
+}
+
+/* On Focus */
+#contact .form-control:focus,
+#contact .form-select:focus {
+  border-color: #198754; /* Bootstrap green */
+  box-shadow: 0 0 6px rgba(25, 135, 84, 0.4);
+}
+
+/* Textarea */
+#contact textarea.form-control {
+  resize: none;
+}
+
+/* Submit Button */
+#contact button[type="submit"] {
+  background: #198754;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+#contact button[type="submit"]:hover {
+  background: #11492f; /* darker jungle green */
+  transform: translateY(-2px);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+
+/* ==================================================
    9. Footer Styling
--------------------------------------------------- */
+================================================== */
 
-/* Footer Columns Alignment */
+/* General Column Layout */
 footer .col-md-3 {
   display: flex;
   flex-direction: column;
@@ -145,7 +247,7 @@ footer .col-md-3 {
 
 /* Footer Logo */
 .footer-logo {
-  height: 120px;
+  height: 174px;
   width: auto;
   display: block;
   margin: 0 auto 15px auto;
@@ -159,9 +261,10 @@ footer .col-md-3 {
   letter-spacing: 1px;
   font-size: 1rem;
   text-transform: uppercase;
+  font-family: var(--primary-font);
 }
 
-/* Footer About Text */
+/* About Text */
 .footer-about {
   font-size: 0.82rem;
   line-height: 1.8;
@@ -170,14 +273,11 @@ footer .col-md-3 {
   text-align: justify;
 }
 
-.about-col {
-  padding-left: 10px;
-}
-
-/* Footer Links */
+/* Links */
 footer a {
   color: #ffffff;
   text-decoration: none;
+  transition: color 0.3s;
 }
 footer a:hover {
   text-decoration: underline;
@@ -200,7 +300,7 @@ footer a:hover {
   transform: scale(1.2);
 }
 
-/* Bottom Section */
+/* Bottom Bar */
 .footer-bottom {
   border-top: 1px solid rgba(255, 255, 255, 0.2);
   margin-top: 20px;
@@ -210,7 +310,25 @@ footer a:hover {
   font-size: 0.8rem;
 }
 
-/* Responsive Fixes */
+/* ==================================================
+   10. Responsive Adjustments
+================================================== */
+
+/* For small buttons in hero section */
+@media (max-width: 400px) {
+  .adventure-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+  .adventure-buttons .btn {
+    width: 100%;
+    margin-bottom: 0;
+  }
+}
+
+/* Footer responsive adjustments */
 @media (max-width: 768px) {
   .footer-about {
     max-width: 100%;
@@ -227,5 +345,16 @@ footer a:hover {
   .footer-social {
     justify-content: center;
     gap: 20px;
+  }
+}
+
+/* Contact section responsive (map smaller on mobile) */
+@media (max-width: 768px) {
+  .map-container {
+    height: 250px;  /* fixed height for mobile */
+    flex-grow: 0;   /* prevent it from stretching */
+  }
+  .map-container iframe {
+    height: 100%;   /* ensure it fills the 250px container */
   }
 }

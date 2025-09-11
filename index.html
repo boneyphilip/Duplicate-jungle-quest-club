@@ -382,159 +382,113 @@
         </div>
       </section>
 
-      <!-- Contact Section -->
-      <section id="contact" class="py-5">
-        <div class="container">
-          <h2 class="section-title text-center mb-5">
-            Contact Us & Book Your Adventure
-          </h2>
+ <!-- Contact Section -->
+<section id="contact" class="py-5">
+  <div class="container">
+    <h2 class="section-title text-center mb-5">
+      Contact Us & Book Your Adventure
+    </h2>
+    <div class="row g-4 contact-wrapper">
+      
+      <!-- Left Column: Contact Info + Map -->
+      <div class="col-lg-6 contact-info">
+        <h4 class="mb-3">Get in Touch</h4>
+        <div class="mb-3">
+          <i class="fas fa-map-marker-alt text-success me-2"></i>
+          <strong>Address:</strong> 123 Adventure Lane, Forest Hills, CA 90210
+        </div>
+        <div class="mb-3">
+          <i class="fas fa-phone text-success me-2"></i>
+          <strong>Phone:</strong> (555) 123-QUEST
+        </div>
+        <div class="mb-3">
+          <i class="fas fa-envelope text-success me-2"></i>
+          <strong>Email:</strong> info@junglequestclub.com
+        </div>
+        <div class="mb-3">
+          <i class="fas fa-clock text-success me-2"></i>
+          <strong>Hours:</strong> Monday - Sunday, 8:00 AM - 6:00 PM
+        </div>
+
+        <!-- Google Map -->
+        <div class="map-container">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.8354345093746!2d144.95373631590442!3d-37.81627944202119!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf57758d6fbbd3f6!2s123%20Adventure%20Lane!5e0!3m2!1sen!2sus!4v1678458123456" 
+            allowfullscreen="" 
+            loading="lazy">
+          </iframe>
+        </div>
+      </div>
+
+      <!-- Right Column: Booking Form -->
+      <div class="col-lg-6 booking-form">
+        <h4 class="mb-3">Book Your Adventure</h4>
+        <form
+          id="signup-form"
+          method="post"
+          action="https://formdump.codeinstitute.net"
+        >
           <div class="row">
-            <div class="col-lg-6">
-              <h4 class="mb-3">Get in Touch</h4>
-              <div class="mb-3">
-                <i class="fas fa-map-marker-alt text-success me-2"></i>
-                <strong>Address:</strong> 123 Adventure Lane, Forest Hills, CA
-                90210
-              </div>
-              <div class="mb-3">
-                <i class="fas fa-phone text-success me-2"></i>
-                <strong>Phone:</strong> (555) 123-QUEST
-              </div>
-              <div class="mb-3">
-                <i class="fas fa-envelope text-success me-2"></i>
-                <strong>Email:</strong> info@junglequestclub.com
-              </div>
-              <div class="mb-3">
-                <i class="fas fa-clock text-success me-2"></i>
-                <strong>Hours:</strong> Monday - Sunday, 8:00 AM - 6:00 PM
-              </div>
-
-              <h5 class="mt-4 mb-3">Follow Us</h5>
-              <div class="footer-social">
-                <a href="#" class="btn btn-outline-success me-2">
-                  <i class="fab fa-facebook-f"></i> Facebook
-                </a>
-                <a href="#" class="btn btn-outline-success me-2">
-                  <i class="fab fa-instagram"></i> Instagram
-                </a>
-                <a href="#" class="btn btn-outline-success">
-                  <i class="fab fa-twitter"></i> Twitter
-                </a>
-              </div>
+            <div class="col-md-6 mb-3">
+              <label for="firstName" class="form-label">First Name</label>
+              <input type="text" class="form-control" id="firstName" name="firstName" required>
             </div>
-
-            <div class="col-lg-6">
-              <h4 class="mb-3">Book Your Adventure</h4>
-
-              <!-- ...booking form.. -->
-              <form
-                id="signup-form"
-                method="post"
-                action="https://formdump.codeinstitute.net"
-              >
-                <div class="row">
-                  <div class="col-md-6 mb-3">
-                    <label for="firstName" class="form-label">First Name</label>
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="firstName"
-                      name="firstName"
-                      required
-                    />
-                  </div>
-                  <div class="col-md-6 mb-3">
-                    <label for="lastName" class="form-label">Last Name</label>
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="lastName"
-                      name="lastName"
-                      required
-                    />
-                  </div>
-                </div>
-                <div class="mb-3">
-                  <label for="email" class="form-label">Email</label>
-                  <input
-                    type="email"
-                    class="form-control"
-                    id="email"
-                    name="email"
-                    required
-                  />
-                </div>
-                <div class="mb-3">
-                  <label for="phone" class="form-label">Phone Number</label>
-                  <input
-                    type="tel"
-                    class="form-control"
-                    id="phone"
-                    name="phone"
-                  />
-                </div>
-                <div class="mb-3">
-                  <label for="adventure" class="form-label"
-                    >Select Adventure</label
-                  >
-                  <select class="form-select" id="adventure" name="adventure">
-                    <option selected>Choose an adventure...</option>
-                    <option value="treasure">Treasure Hunt Quest</option>
-                    <option value="survival">Survival Skills Camp</option>
-                    <option value="night">Night Trek Challenge</option>
-                    <option value="jungle">Jungle Expedition</option>
-                  </select>
-                </div>
-                <div class="row">
-                  <div class="col-md-6 mb-3">
-                    <label for="adults" class="form-label"
-                      >Number of Adults</label
-                    >
-                    <input
-                      type="number"
-                      class="form-control"
-                      id="adults"
-                      name="adults"
-                      min="0"
-                      value="1"
-                    />
-                  </div>
-                  <div class="col-md-6 mb-3">
-                    <label for="children" class="form-label"
-                      >Number of Children</label
-                    >
-                    <input
-                      type="number"
-                      class="form-control"
-                      id="children"
-                      name="children"
-                      min="0"
-                      value="0"
-                    />
-                  </div>
-                </div>
-                <div class="mb-3">
-                  <label for="message" class="form-label"
-                    >Special Requests</label
-                  >
-                  <textarea
-                    class="form-control"
-                    id="message"
-                    name="message"
-                    rows="3"
-                  ></textarea>
-                </div>
-                <button type="submit" class="btn btn-success btn-lg w-100">
-                  Book Adventure Now!
-                </button>
-              </form>
+            <div class="col-md-6 mb-3">
+              <label for="lastName" class="form-label">Last Name</label>
+              <input type="text" class="form-control" id="lastName" name="lastName" required>
             </div>
           </div>
-        </div>
-      </section>
+
+          <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" name="email" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="phone" class="form-label">Phone Number</label>
+            <input type="tel" class="form-control" id="phone" name="phone">
+          </div>
+
+          <div class="mb-3">
+            <label for="adventure" class="form-label">Select Adventure</label>
+            <select class="form-select" id="adventure" name="adventure">
+              <option selected>Choose an adventure...</option>
+              <option value="treasure">Treasure Hunt Quest</option>
+              <option value="survival">Survival Skills Camp</option>
+              <option value="night">Night Trek Challenge</option>
+              <option value="jungle">Jungle Expedition</option>
+            </select>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="adults" class="form-label">Number of Adults</label>
+              <input type="number" class="form-control" id="adults" name="adults" min="0" value="1">
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="children" class="form-label">Number of Children</label>
+              <input type="number" class="form-control" id="children" name="children" min="0" value="0">
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="message" class="form-label">Special Requests</label>
+            <textarea class="form-control" id="message" name="message" rows="3"></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-success btn-lg w-100">
+            Book Adventure Now!
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+
     </main>
 
-    <!-- Footer -->
+    
       <!-- Footer -->
 <footer class="py-5 bg-success text-light">
   <div class="container">
