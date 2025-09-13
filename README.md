@@ -179,9 +179,9 @@ Target Audience:
 
 - Lightbox popups for gallery images.
 
-= User accounts for managing bookings.
+- User accounts for managing bookings.
 
-= Interactive event calendar with availability.
+- Interactive event calendar with availability.
 
 ✅ Testing
 Manual Testing
@@ -291,4 +291,5 @@ To inspire more people to step outside, learn practical outdoor skills, and make
 
 **Enjoy building and happy adventuring!**  
 Jungle Quest Club – Where every trail tells a story.
+
 
