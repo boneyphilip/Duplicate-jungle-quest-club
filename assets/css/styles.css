@@ -150,6 +150,18 @@ nav#navbar.scrolled {
   color: #000;
 }
 
+/* Gallery Hero Title & Subtitle */
+#gallery-hero h1 {
+  color: #f5d313;  /* jungle yellow */
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6); /* improve readability */
+}
+
+#gallery-hero p {
+  color: #ffffff;  /* keep white for balance */
+  font-weight: 500;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5); /* readability */
+}
+
 /* =========================================================
    6. SCROLL ARROW
    ========================================================= */
@@ -340,12 +352,29 @@ footer a:hover {
 /* Mobile fix for alignment */
 @media (max-width: 768px) {
   footer .col-md-3 {
+    text-align: center;   /* center all footer columns */
+    padding: 10px 0;
+  }
+
+  .footer-logo {
+    height: 120px;        /* make logo larger for visibility */
+    margin: 0 auto 15px auto; /* center logo with margin */
+    display: block;
+  }
+
+  .footer-about {
+    max-width: 90%;       /* keep text neat */
+    margin: 0 auto 15px auto;
+    text-align: center;   /* center text */
+  }
+
+  .footer-heading {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
   }
 
   .footer-social {
-    justify-content: center;
+    justify-content: center; /* center social icons */
   }
 }
 /* =========================================================
