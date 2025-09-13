@@ -1,19 +1,19 @@
 /* =========================================================
    1. GOOGLE FONTS
    ========================================================= */
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Roboto+Slab:wght@400;600;700;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Roboto+Slab:wght@400;600;700;800&display=swap");
 
 /* =========================================================
    2. VARIABLES
    ========================================================= */
 :root {
-  --primary-font: 'Roboto Slab', serif;
-  --secondary-font: 'Open Sans', sans-serif;
+  --primary-font: "Roboto Slab", serif;
+  --secondary-font: "Open Sans", sans-serif;
 
-  --primary-color: #f5d313;   /* Yellow highlight */
+  --primary-color: #f5d313; /* Yellow highlight */
   --secondary-color: #aa9581; /* Neutral brown */
   --highlight-color: #11492f; /* Dark green */
-  --accent: #198754;          /* Bootstrap green */
+  --accent: #198754; /* Bootstrap green */
 }
 
 /* =========================================================
@@ -25,7 +25,11 @@ body {
   padding: 0;
 }
 
-h1, h2, h3, h4, h5 {
+h1,
+h2,
+h3,
+h4,
+h5 {
   font-family: var(--primary-font);
 }
 
@@ -39,7 +43,7 @@ nav#navbar {
 
 nav#navbar.scrolled {
   background-color: #0d1e06 !important;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
 }
 
 .logo {
@@ -50,7 +54,7 @@ nav#navbar.scrolled {
 .navbar-nav .nav-link {
   text-transform: uppercase;
   font-weight: 600;
-  color: rgba(255,255,255,0.9) !important;
+  color: rgba(255, 255, 255, 0.9) !important;
   transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
@@ -81,19 +85,19 @@ nav#navbar.scrolled {
    5. HERO SECTION
    ========================================================= */
 .hero {
-  background: url('../images/tom-boy-in-jungle.webp') center/cover no-repeat;
+  background: url("../images/tom-boy-in-jungle.webp") center/cover no-repeat;
   height: 100vh;
   display: flex;
- justify-content: center;   /* horizontal center */
-  align-items: center;       /* vertical center */
-  text-align: center;        /* center text inside */
+  justify-content: center; /* horizontal center */
+  align-items: center; /* vertical center */
+  text-align: center; /* center text inside */
   position: relative;
 }
 
 /* Hero content */
 .hero-content {
   position: relative;
-  max-width: 800px;   /* keep content neat */
+  max-width: 800px; /* keep content neat */
   margin: 0 auto;
 }
 
@@ -152,12 +156,12 @@ nav#navbar.scrolled {
 
 /* Gallery Hero Title & Subtitle */
 #gallery-hero h1 {
-  color: #f5d313;  /* jungle yellow */
+  color: #f5d313; /* jungle yellow */
   text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6); /* improve readability */
 }
 
 #gallery-hero p {
-  color: #ffffff;  /* keep white for balance */
+  color: #ffffff; /* keep white for balance */
   font-weight: 500;
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5); /* readability */
 }
@@ -166,8 +170,8 @@ nav#navbar.scrolled {
    6. SCROLL ARROW
    ========================================================= */
 .hero-arrow {
-   position: absolute;
-  bottom: 30px;   /* distance from bottom */
+  position: absolute;
+  bottom: 30px; /* distance from bottom */
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
@@ -182,8 +186,9 @@ nav#navbar.scrolled {
 }
 
 @keyframes bounce {
- 0%, 100% {
-    transform: translateX(-50%) translateY(0);   /* keep centered X */
+  0%,
+  100% {
+    transform: translateX(-50%) translateY(0); /* keep centered X */
   }
   50% {
     transform: translateX(-50%) translateY(-10px); /* bounce up */
@@ -212,7 +217,7 @@ nav#navbar.scrolled {
   background: #fff;
   padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
 }
 
 #contact label {
@@ -232,7 +237,7 @@ nav#navbar.scrolled {
 #contact .form-control:focus,
 #contact .form-select:focus {
   border-color: var(--accent);
-  box-shadow: 0 0 6px rgba(25,135,84,0.4);
+  box-shadow: 0 0 6px rgba(25, 135, 84, 0.4);
 }
 
 #contact button[type="submit"] {
@@ -246,7 +251,7 @@ nav#navbar.scrolled {
 #contact button[type="submit"]:hover {
   background: var(--highlight-color);
   transform: translateY(-2px);
-  box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
 }
 
 /* =========================================================
@@ -256,7 +261,7 @@ nav#navbar.scrolled {
   margin-top: 1rem;
   border-radius: 12px; /* smooth rounded corners */
   overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.25); /* nice shadow */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25); /* nice shadow */
   height: 476px; /* default desktop size */
 }
 
@@ -284,10 +289,10 @@ footer {
 }
 
 .footer-logo {
-  height: 140px;      /* increased size */
+  height: 140px; /* increased size */
   width: auto;
   display: block;
-  margin: 0 auto; 
+  margin: 0 auto;
 }
 
 .footer-heading {
@@ -299,7 +304,7 @@ footer {
 }
 
 .footer-about {
-   margin-top: 5px;   /* reduce extra spacing */
+  margin-top: 5px; /* reduce extra spacing */
   max-width: 300px;
   font-size: 0.9rem;
   line-height: 1.6;
@@ -308,9 +313,9 @@ footer {
 footer .col-md-3:first-child {
   display: flex;
   flex-direction: column;
-  align-items: center;    /* logo centered */
+  align-items: center; /* logo centered */
   justify-content: flex-start;
-  gap: 10px;              /* small space only */
+  gap: 10px; /* small space only */
 }
 
 .footer-social {
@@ -337,11 +342,11 @@ footer a:hover {
 
 .footer-social a:hover {
   color: #f5d313;
-  transform: scale(1.2);;
+  transform: scale(1.2);
 }
 
 .footer-bottom {
-  border-top: 1px solid rgba(255,255,255,0.2);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
   margin-top: 20px;
   padding-top: 10px;
   text-align: center;
@@ -352,20 +357,20 @@ footer a:hover {
 /* Mobile fix for alignment */
 @media (max-width: 768px) {
   footer .col-md-3 {
-    text-align: center;   /* center all footer columns */
+    text-align: center; /* center all footer columns */
     padding: 10px 0;
   }
 
   .footer-logo {
-    height: 120px;        /* make logo larger for visibility */
+    height: 120px; /* make logo larger for visibility */
     margin: 0 auto 15px auto; /* center logo with margin */
     display: block;
   }
 
   .footer-about {
-    max-width: 90%;       /* keep text neat */
+    max-width: 90%; /* keep text neat */
     margin: 0 auto 15px auto;
-    text-align: center;   /* center text */
+    text-align: center; /* center text */
   }
 
   .footer-heading {
@@ -384,7 +389,7 @@ footer a:hover {
   .hero {
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;   /* content moves towards bottom */
+    justify-content: flex-end; /* content moves towards bottom */
     align-items: center;
     height: 95vh;
     text-align: center;
@@ -400,7 +405,7 @@ footer a:hover {
     font-size: 1.6rem;
     font-weight: 700;
     color: #fff;
-    text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
     text-align: center;
   }
 
@@ -411,7 +416,7 @@ footer a:hover {
     margin-top: 10px;
     text-align: center;
     text-transform: uppercase;
-    text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
   }
 
   .hero-text {
@@ -424,6 +429,5 @@ footer a:hover {
 
   .hero-arrow {
     padding-bottom: 20px;
-    
   }
 }
