@@ -258,11 +258,12 @@ nav#navbar.scrolled {
 /* Mobile hero section adjustments */
 @media (max-width: 768px) {
   .hero {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    padding: 20px;
+    background-image: url('../images/tom-boy-in-jungle.webp'); /* fallback for now */
+    background-attachment: scroll;
+    background-size: cover;
+    background-position: center top;
   }
+}
 
   .hero .container {
     position: absolute;
@@ -270,7 +271,7 @@ nav#navbar.scrolled {
     left: 50%;
     transform: translateX(-50%);
     text-align: center;
-    width: 90%;
+    width: 70%;
   }
 
   .hero-title {
