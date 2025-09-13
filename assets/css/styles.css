@@ -248,7 +248,7 @@ nav#navbar.scrolled {
 /* Desktop arrow positioning - pushed down more from center */
 @media (min-width: 769px) {
   .hero .scroll-down {
-    bottom: -475px; /* Moved closer to bottom - adjust this value to push down more */
+    bottom: 15px; /* Moved closer to bottom - adjust this value to push down more */
     left: 50%;
     transform: translateX(-50%);
     font-size: 2.2rem;
@@ -274,6 +274,7 @@ nav#navbar.scrolled {
   }
 
   .hero-title {
+    text-align: center;
     font-size: 1.6rem;
     font-weight: 700;
     color: #fff;
@@ -281,9 +282,10 @@ nav#navbar.scrolled {
   }
 
   .hero-subtitle {
+    text-align: center;
     font-size: 2.6rem;
     font-weight: 600;
-    margin-bottom: 3.5rem;
+    margin-bottom: 7rem;
     color: #f5d313;
     text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
     text-transform: uppercase;
@@ -298,9 +300,9 @@ nav#navbar.scrolled {
     display: none;
   }
 
-  /* Mobile arrow positioning */
+  /* Mobile arrow positioning - moved higher up */
   .hero .scroll-down {
-    bottom: 10px;
+    bottom: 50px; /* Moved up from 20px to 50px */
     left: 50%;
     transform: translateX(-50%);
     font-size: 1.8rem;
