@@ -1,208 +1,126 @@
-/* ================================================================================
-   JUNGLE QUEST CLUB - ORGANIZED CSS STYLESHEET
-   ================================================================================
-   Table of Contents:
-   1. Google Fonts Import
-   2. CSS Variables (Theme Colors & Fonts)
-   3. Global Reset & Base Typography
-   4. Navigation Bar Styles
-   5. Hero Section Styles
-   6. Section Title Styles
-   7. Contact Section Styles
-   8. Footer Styles
-   9. Responsive Design Adjustments
-   ================================================================================ */
+/* =========================================================
+   1. GOOGLE FONTS
+   ========================================================= */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Roboto+Slab:wght@400;600;700;800&display=swap');
 
-/* ================================================================================
-   1. GOOGLE FONTS IMPORT
-   ================================================================================ */
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto+Slab:wght@100..900&display=swap');
-
-/* ================================================================================
-   2. CSS VARIABLES (THEME COLORS & FONTS)
-   ================================================================================ */
+/* =========================================================
+   2. VARIABLES
+   ========================================================= */
 :root {
-  /* Font families */
   --primary-font: 'Roboto Slab', serif;
   --secondary-font: 'Open Sans', sans-serif;
 
-  /* Color scheme */
   --primary-color: #f5d313;   /* Yellow highlight */
   --secondary-color: #aa9581; /* Neutral brown */
   --highlight-color: #11492f; /* Dark green */
-  --highlight-color-light: #ab9b78;
-  --accent: #c4ff0e;          /* Accent lime */
+  --accent: #198754;          /* Bootstrap green */
 }
 
-/* ================================================================================
-   3. GLOBAL RESET & BASE TYPOGRAPHY
-   ================================================================================ */
+/* =========================================================
+   3. GLOBAL RESET & BASE
+   ========================================================= */
 body {
   font-family: var(--secondary-font);
   margin: 0;
   padding: 0;
 }
 
-/* Main heading styles */
-h1 {
-  color: var(--primary-color);
+h1, h2, h3, h4, h5 {
   font-family: var(--primary-font);
 }
 
-/* Contact section heading padding */
-h4.mb-3 {
-  padding: 1.5rem;
-}
-
-/* Navigation link text styling */
-a.nav-link {
-  text-transform: uppercase;
-  font-weight: 700;
-  font-family: var(--secondary-font);
-}
-
-/* ================================================================================
-   4. NAVIGATION BAR STYLES
-   ================================================================================ */
-
-/* Base navbar styling - transparent by default */
+/* =========================================================
+   4. NAVBAR
+   ========================================================= */
 nav#navbar {
-  background-color: transparent !important;
+  background: transparent !important;
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Navbar styling after scrolling */
 nav#navbar.scrolled {
-  background-color: #0d1e06 !important; /* Dark jungle green */
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+  background-color: #0d1e06 !important;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.25);
 }
 
-/* Navbar container settings */
-.navbar {
-  min-height: 56px;
-  align-items: center;
-}
-
-/* Brand/logo container */
-.navbar-brand {
-  display: flex;
-  align-items: center;
-}
-
-/* Logo image sizing */
 .logo {
   height: 60px;
   width: auto;
-  object-fit: contain;
 }
 
-/* Active navigation link styling */
-.navbar-nav .nav-link.active {
-  color: #f5d313 !important; /* Yellow highlight */
-  font-weight: 700;
-  border-bottom: 2px solid #f5d313;
-}
-
-/* Navbar navigation container */
-.navbar-nav {
-  position: relative;
-}
-
-/* Base navigation link styling */
 .navbar-nav .nav-link {
-  position: relative;
-  color: rgba(255, 255, 255, 0.9) !important; /* Bright white with transparency */
+  text-transform: uppercase;
   font-weight: 600;
-  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6); /* Text shadow for readability */
-  transition: color 0.3s ease, text-shadow 0.3s ease;
+  color: rgba(255,255,255,0.9) !important;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
+  transition: color 0.3s ease;
 }
 
-/* Animated underline for navigation links */
-.navbar-underline {
-  position: absolute;
-  bottom: 0;
-  height: 2px;
-  background-color: #f5d313; /* Yellow underline */
-  transition: left 0.3s ease, width 0.3s ease;
-  left: 0;
-  width: 0;
+.navbar-nav .nav-link.active {
+  color: var(--primary-color) !important;
+  border-bottom: 2px solid var(--primary-color);
 }
 
-/* Custom button styling for "Book Now" */
 .navbar .custom-button-filled {
-  background-color: #198754 !important; /* Bootstrap green */
-  color: #fff !important;               /* White text */
+  background: var(--accent);
+  color: #fff !important;
   border: none;
-  padding: 8px 18px;
   border-radius: 5px;
+  padding: 8px 18px;
   font-weight: 600;
-  transition: background-color 0.3s ease;
+  transition: background 0.3s ease;
 }
 
-/* Hover effect for custom button */
 .navbar .custom-button-filled:hover {
-  background-color: #145c32 !important; /* Darker green on hover */
-  color: #fff !important;               /* Keep white text */
+  background: #145c32 !important;
 }
 
-/* Remove underline on mobile devices */
-@media (max-width: 991px) {
-  .navbar-nav .nav-link.active {
-    border-bottom: none;
-  }
-}
-
-/* ================================================================================
-   5. HERO SECTION STYLES
-   ================================================================================ */
-
-/* Main hero section container */
+/* =========================================================
+   5. HERO SECTION
+   ========================================================= */
 .hero {
   background: url('../images/tom-boy-in-jungle.webp') center/cover no-repeat;
   height: 100vh;
   display: flex;
+ justify-content: center;   /* horizontal center */
+  align-items: center;       /* vertical center */
+  text-align: center;        /* center text inside */
   position: relative;
-  background-attachment: fixed; /* Parallax scrolling effect */
 }
 
-/* Hero content container */
-.hero .container {
+/* Hero content */
+.hero-content {
   position: relative;
-  text-align: left;
+  max-width: 800px;   /* keep content neat */
+  margin: 0 auto;
 }
 
-/* Main hero title */
 .hero-title {
-  font-size: 2.2rem;
+  font-size: 2.5rem;
   font-weight: 700;
-  color: #f5d313; /* Jungle yellow */
+  color: #f5d313;
   font-family: var(--primary-font);
+  margin-bottom: 10px;
 }
 
-/* Hero subtitle */
 .hero-subtitle {
   font-size: 2.4rem;
   font-weight: 800;
-  color: #f5d313;
   margin-bottom: 20px;
-  font-family: var(--primary-font);
+  color: var(--primary-color);
 }
 
-/* Hero description text */
+/* Hero paragraph centered */
 .hero-text {
   font-size: 1.2rem;
-  max-width: 600px;
   color: #f1f1f1;
+  max-width: 600px;
   line-height: 1.6;
-  text-align: left;
 }
 
-/* Hero button container */
 .hero-buttons {
   margin-top: 1.5rem;
 }
 
-/* Hero button base styling */
 .hero-buttons .btn {
   padding: 12px 28px;
   font-weight: 600;
@@ -210,287 +128,138 @@ nav#navbar.scrolled {
   transition: all 0.3s ease;
 }
 
-/* Success button styling */
 .hero-buttons .btn-success {
-  background-color: #198754;
+  background: var(--accent);
   border: none;
 }
 
 .hero-buttons .btn-success:hover {
-  background-color: #145c32;
+  background: #145c32;
 }
 
-/* Outline button styling */
 .hero-buttons .btn-outline-light {
   border: 2px solid #fff;
   color: #fff;
 }
 
 .hero-buttons .btn-outline-light:hover {
-  background-color: #fff;
+  background: #fff;
   color: #000;
 }
 
-/* ==================== SCROLL DOWN ARROW STYLES ==================== */
+/* =========================================================
+   6. SCROLL ARROW
+   ========================================================= */
+.hero-arrow {
+   position: absolute;
+  bottom: 30px;   /* distance from bottom */
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
 
-/* Base scroll-down arrow styling */
-.hero .scroll-down {
-  display: block;
-  position: absolute;
+.scroll-down {
   font-size: 2rem;
-  color: white;
+  color: #fff;
+  text-decoration: none;
   animation: bounce 1.5s infinite;
-  cursor: pointer;
-  z-index: 10;
-  text-decoration: none; /* Remove link underline */
+  display: inline-block;
 }
 
-/* Desktop arrow positioning - pushed down more from center */
-@media (min-width: 769px) {
-  .hero .scroll-down {
-    bottom: 15px; /* Moved closer to bottom - adjust this value to push down more */
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 2.2rem;
-  }
-}
-
-/* Mobile hero section adjustments */
-@media (max-width: 768px) {
-  .hero {
-    background-image: url('../images/tom-boy-in-jungle.webp'); /* fallback for now */
-    background-attachment: scroll;
-    background-size: cover;
-    background-position: center top;
-  }
-}
-
-  .hero .container {
-    position: absolute;
-    bottom: 60px;
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: center;
-    width: 70%;
-  }
-
-  .hero-title {
-    text-align: center;
-    font-size: 1.6rem;
-    font-weight: 700;
-    color: #fff;
-    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
-  }
-
-  .hero-subtitle {
-    text-align: center;
-    font-size: 2.6rem;
-    font-weight: 600;
-    margin-bottom: 7rem;
-    color: #f5d313;
-    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
-    text-transform: uppercase;
-  }
-
-  /* Hide text and buttons on mobile */
-  .hero-text {
-    display: none;
-  }
-
-  .hero-buttons {
-    display: none;
-  }
-
-  /* Mobile arrow positioning - moved higher up */
-  .hero .scroll-down {
-    bottom: 50px; /* Moved up from 20px to 50px */
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 1.8rem;
-  }
-}
-
-/* Bounce animation for scroll arrow */
 @keyframes bounce {
-  0%, 100% { 
-    transform: translateX(-50%) translateY(0); 
+ 0%, 100% {
+    transform: translateX(-50%) translateY(0);   /* keep centered X */
   }
-  50% { 
-    transform: translateX(-50%) translateY(-10px); 
-  }
-}
-
-/* Mobile-specific bounce animation */
-@media (max-width: 768px) {
-  @keyframes bounce {
-    0%, 100% { 
-      transform: translate(-50%, 0); 
-    }
-    50% { 
-      transform: translate(-50%, -10px); 
-    }
+  50% {
+    transform: translateX(-50%) translateY(-10px); /* bounce up */
   }
 }
 
-/* ================================================================================
-   6. SECTION TITLE STYLES
-   ================================================================================ */
+/* =========================================================
+   7. SECTION TITLES
+   ========================================================= */
 .section-title {
-  color: #198754; /* Bootstrap green */
+  color: var(--accent);
   font-weight: bold;
   font-family: var(--primary-font);
 }
 
-/* ================================================================================
-   7. CONTACT SECTION STYLES
-   ================================================================================ */
-
-/* Contact wrapper for equal height columns */
+/* =========================================================
+   8. CONTACT SECTION
+   ========================================================= */
 #contact .contact-wrapper {
   display: flex;
   flex-wrap: wrap;
   align-items: stretch;
 }
 
-/* Contact info and form column styling */
-#contact .contact-info,
-#contact .booking-form {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-}
-
-/* Google Map container styling */
-.map-container {
-  flex-grow: 1;
-  margin-top: 1rem;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-}
-
-/* Map iframe styling with filters */
-.map-container iframe {
-  width: 100%;
-  height: 100%;
-  border: 0;
-  filter: saturate(1.2) brightness(0.95) contrast(1.05);
-  /* 
-    saturate(1.2)   → Boost greens for vegetation
-    brightness(0.95) → Slightly darker, less washed out
-    contrast(1.05)  → Better definition
-  */
-  border-radius: 8px;
-}
-
-/* Contact form container styling */
 #contact form {
-  background: #ffffff;
+  background: #fff;
   padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
 }
 
-/* Form label styling */
 #contact label {
   font-weight: 600;
   font-size: 0.9rem;
-  color: #11492f; /* Jungle green */
-  margin-bottom: 4px;
+  color: var(--highlight-color);
 }
 
-/* Form input and select styling */
 #contact .form-control,
 #contact .form-select {
   border-radius: 6px;
   border: 1px solid #ddd;
-  transition: all 0.3s ease;
-  box-shadow: none;
   font-size: 0.95rem;
+  transition: all 0.3s ease;
 }
 
-/* Form focus states */
 #contact .form-control:focus,
 #contact .form-select:focus {
-  border-color: #198754;
-  box-shadow: 0 0 6px rgba(25, 135, 84, 0.4);
+  border-color: var(--accent);
+  box-shadow: 0 0 6px rgba(25,135,84,0.4);
 }
 
-/* Textarea specific styling */
-#contact textarea.form-control {
-  resize: none;
-}
-
-/* Submit button styling */
 #contact button[type="submit"] {
-  background: #198754;
+  background: var(--accent);
   border: none;
   border-radius: 6px;
   font-weight: 600;
   transition: all 0.3s ease;
 }
 
-/* Submit button hover effects */
 #contact button[type="submit"]:hover {
-  background: #11492f;
+  background: var(--highlight-color);
   transform: translateY(-2px);
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 3px 6px rgba(0,0,0,0.2);
 }
 
-/* ================================================================================
-   8. FOOTER STYLES
-   ================================================================================ */
-
-/* Footer column layout */
-footer .col-md-3 {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  padding-left: 2rem;
-  padding-right: 2rem;
+/* =========================================================
+   9. FOOTER
+   ========================================================= */
+footer {
+  background: var(--accent);
+  color: #fff;
+  padding: 40px 0;
 }
 
-/* Footer logo styling */
 .footer-logo {
-  height: 174px;
-  width: auto;
-  display: block;
-  margin: 0 auto 15px auto;
+  height: 100px;
+  margin-bottom: 15px;
 }
 
-/* Footer headings */
 .footer-heading {
-  margin-top: 0.9rem;
-  margin-bottom: 0.75rem;
-  font-weight: 500;
-  letter-spacing: 1px;
-  font-size: 1rem;
+  font-weight: 600;
   text-transform: uppercase;
   font-family: var(--primary-font);
+  margin-bottom: 10px;
 }
 
-/* Footer about text */
 .footer-about {
-  font-size: 0.82rem;
-  line-height: 1.8;
-  color: #ffffff;
-  max-width: 280px;
-  text-align: justify;
+  font-size: 0.85rem;
+  line-height: 1.6;
 }
 
-/* Footer link styling */
-footer a {
-  color: #ffffff;
-  text-decoration: none;
-  transition: color 0.3s;
-}
-
-footer a:hover {
-  text-decoration: underline;
-  color: var(--primary-color);
-}
-
-/* Social media icons */
 .footer-social {
   display: flex;
   gap: 18px;
@@ -498,9 +267,9 @@ footer a:hover {
 }
 
 .footer-social a {
-  color: #ffffff;
+  color: #fff;
   font-size: 1.3rem;
-  transition: color 0.3s, transform 0.3s;
+  transition: transform 0.3s, color 0.3s;
 }
 
 .footer-social a:hover {
@@ -508,65 +277,61 @@ footer a:hover {
   transform: scale(1.2);
 }
 
-/* Footer bottom section */
 .footer-bottom {
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  border-top: 1px solid rgba(255,255,255,0.2);
   margin-top: 20px;
   padding-top: 10px;
   text-align: center;
-  color: #d9d9d9;
   font-size: 0.8rem;
+  color: #ddd;
 }
 
-/* ================================================================================
-   9. RESPONSIVE DESIGN ADJUSTMENTS
-   ================================================================================ */
-
-/* Small screen button adjustments */
-@media (max-width: 400px) {
-  .adventure-buttons {
+/* =========================================================
+   10. RESPONSIVE
+   ========================================================= */
+@media (max-width: 768px) {
+  .hero {
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    width: 100%;
-  }
-  
-  .adventure-buttons .btn {
-    width: 100%;
-    margin-bottom: 0;
-  }
-}
-
-/* Mobile footer adjustments */
-@media (max-width: 768px) {
-  .footer-about {
-    max-width: 100%;
+    justify-content: flex-end;   /* content moves towards bottom */
+    align-items: center;
+    height: 100vh;
     text-align: center;
-    margin: 0 auto;
-    font-size: 0.85rem;
-    line-height: 1.6;
+    padding-bottom: 120px; /* space above scroll arrow */
   }
-  
-  .footer-heading {
-    text-align: center;
-    margin-top: 1rem;
-    margin-bottom: 0.5rem;
-  }
-  
-  .footer-social {
-    justify-content: center;
-    gap: 20px;
-  }
-}
 
-/* Mobile contact section adjustments */
-@media (max-width: 768px) {
-  .map-container {
-    height: 250px; /* Fixed height on mobile */
-    flex-grow: 0;
+  .hero-content {
+    text-align: center;
+    max-width: 90%;
   }
-  
-  .map-container iframe {
-    height: 100%;
+
+  .hero-title {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #fff;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+    text-align: center;
+  }
+
+  .hero-subtitle {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #f5d313;
+    margin-top: 10px;
+    text-align: center;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
+  }
+
+  .hero-text {
+    display: none; /* hide text for mobile */
+  }
+
+  .hero-buttons {
+    display: none; /* hide buttons for mobile */
+  }
+
+  .hero-arrow {
+    padding-bottom: 20px;
   }
 }
