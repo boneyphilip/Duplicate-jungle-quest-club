@@ -295,7 +295,7 @@ footer {
     flex-direction: column;
     justify-content: flex-end;   /* content moves towards bottom */
     align-items: center;
-    height: 100vh;
+    height: 70vh;
     text-align: center;
     padding-bottom: 120px; /* space above scroll arrow */
   }
@@ -333,5 +333,6 @@ footer {
 
   .hero-arrow {
     padding-bottom: 20px;
+    
   }
 }
